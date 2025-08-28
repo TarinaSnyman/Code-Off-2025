@@ -5,7 +5,7 @@ Click the links below to view each project and its details:
 
 ## Projects
 
-1. [Don't Click The Button](./Project1/README.md)  
+1. [Don't Click The Button](./Week1-TrickyButton/README.md)  
    A fun interactive button that changes from cute → angry, dodges the cursor, explodes, and eventually “dies”.
 
 

@@ -1,6 +1,6 @@
 # 🚫 Don't Click The Button
 
-Welcome to the **ultimate rage-inducing button experience**.  
+Welcome to the **ultimate annoying/rage-inducing button experience**.  
 This project exists to test your patience, destroy your mouse’s dignity, and make you question why you ever tried to click a button in the first place.  
 
 ---

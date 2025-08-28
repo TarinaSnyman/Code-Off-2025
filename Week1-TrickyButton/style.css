@@ -108,7 +108,7 @@ body.angry {
     pointer-events: none;
     display: none;
     background: radial-gradient(circle, #ff9900 20%, transparent 70%); /* bright orange */
-    animation: explode 1s forwards;
+    animation: explode 2s forwards;
 }
 
 @keyframes explode {
@@ -116,19 +116,4 @@ body.angry {
     100% { transform: scale(5); opacity: 0; }
 }
 
-/* dramatic message */
-#bigMessage {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 72px; /* really big */
-    font-weight: bold;
-    color: #ff0000;
-    text-align: center;
-    display: none;
-    z-index: 5;
-    text-shadow: 2px 2px 10px black;
-    background-color: #3b0606;
-    width: 100%
-}
+

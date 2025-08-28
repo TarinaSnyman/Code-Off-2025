@@ -7,7 +7,7 @@ const bigMessage = document.getElementById('bigMessage');
 
 let clickCount = 0;
 
-// Show temporary messages
+// show temporary messages
 function showMessage(text) {
     message.textContent = text;
     message.style.display = 'block';
@@ -48,7 +48,7 @@ function rageQuit(){
     document.body.innerHTML=
     `<div style="background:white; color:black; font-family:Arial, sans-serif; padding:40px; text-align:left;">
                 <h1>404 Button Not Found</h1>
-                <p>How could you. You killed an innocent button.</p>
+                <p>How could you! You killed an innocent button</p>
                 
             </div>`;
 }

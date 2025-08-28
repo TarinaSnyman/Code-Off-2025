@@ -43,7 +43,13 @@ body.angry {
     background: #330000; 
     color: #ff0000; 
 }
-
+#button-container{
+    position: absolute;   
+    top: 0;
+    left: 0;
+    width: 100vw;         
+    height: 100vh;
+}
 #trickyButton.angry {
     background: linear-gradient(145deg, #ff0000, #990000);
     transform: rotate(-5deg);
@@ -57,6 +63,21 @@ body.angry {
     50% { transform: rotate(-5deg); }
     75% { transform: rotate(5deg); }
     100% { transform: rotate(-5deg); }
+}
+
+/* fake buttons */
+.fake-button {
+  padding: 10px 20px; /* slightly smaller */
+  font-size: 1rem; 
+  background: linear-gradient(145deg, #ff0000, #990000);
+  transform: rotate(-5deg);
+    box-shadow: 0 6px #660000, 0 10px 25px rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0.9;
+  animation: wiggle 0.5s infinite;
 }
 
 /* Button message */

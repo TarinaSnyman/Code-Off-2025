@@ -22,6 +22,36 @@ function move(button){
         button.style.left = randomX + "px";
         button.style.top = randomY + "px";
 }
+//spawn fake buttons
+const buttonContainer = document.getElementById("button-container");
+function spawnFakeButton(count){
+    for (let i=0;i<count;i++){
+        const fakeBtn=document.createElement("button");
+        fakeBtn.innerText= "Button";
+        fakeBtn.classList.add("fake-button");
+
+        //random pos
+        fakeBtn.style.position="absolute";
+        fakeBtn.style.top = Math.random() * 100 + "%";
+        fakeBtn.style.left = Math.random() * 100 + "%";
+
+        fakeBtn.style.pointerEvents = "none";
+        buttonContainer.appendChild(fakeBtn);
+
+        setInterval(() => {
+        move(fakeBtn);
+    }, 800);
+    }
+}
+
+function rageQuit(){
+    document.body.innerHTML=
+    `<div style="background:white; color:black; font-family:Arial, sans-serif; padding:40px; text-align:left;">
+                <h1>404 Button Not Found</h1>
+                <p>How could you. You killed an innocent button.</p>
+                
+            </div>`;
+}
 
 const titleRect = title.getBoundingClientRect();
 button.style.left = `${window.innerWidth/2 - button.offsetWidth/2}px`;
@@ -31,22 +61,18 @@ button.addEventListener('click', () => {
     clickCount++;
 
     if (clickCount === 1) {
-        // First click → angry mode
-        showMessage("I told you not to click me!");
+        showMessage("Ouch!");
         button.classList.add('angry');
         body.classList.add('angry');
         title.textContent = "Oh no! Now the button is angry";
         move(button);
+        move(fakeBtn)
     } else if (clickCount === 2) {
-        // Second click → explosion
         explosion.style.display = 'block';
         showMessage("💥Oww! That Hurt💥");
         setTimeout(() => { explosion.style.display = 'none'; }, 1000);
     } else if (clickCount === 3) {
-        // Third click → RIP message and button disappears
-        button.style.display = 'none';
-        bigMessage.style.display = 'block';
-        title.textContent = "RIP Button";
+        rageQuit();
     }
 });
 
@@ -59,5 +85,6 @@ button.addEventListener('mouseover', () => {
         const randomY = Math.floor(Math.random() * maxY);
         button.style.left = randomX + "px";
         button.style.top = randomY + "px";
+        spawnFakeButton(2);
     }
 });

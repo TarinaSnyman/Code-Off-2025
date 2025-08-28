@@ -10,13 +10,7 @@ This project exists to test your patience, destroy your mouse’s dignity, and m
 - **Fake Buttons Everywhere**: The button tries to distract you by spawning fake copies. (The buttons copying power is not great as the copies are a bit smaller)
 - **Impossible UI**: Buttons randomly jump all over the screen, forcing you into a futile chase.  
 - **Rage Quit Ending**: If you manage to survive long enough, the button dies… and the screen **turns into a fake 404 page**, leaving you questioning reality.  
-- **Satisfyingly Evil**: Every aspect of the UI is designed to frustrate the user without actually breaking anything.  
----
-
-## How to Use 🎮
-1. Open `index.html` in your browser. 
-2. Try clicking the button.  
-3. Watch the button react as it becomes angry, dodges, explodes, and eventually *“dies”*!  
+- **Satisfyingly Evil**: Every aspect of the UI is designed to frustrate the user without actually breaking anything.    
 
 ---
 

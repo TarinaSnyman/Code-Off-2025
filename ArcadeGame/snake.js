@@ -1,4 +1,4 @@
-var blocksize=25,rows=25,cols=25,board,context;//board
+var blocksize=25,rows=20,cols=20,board,context;//board
 var snakeX= blocksize*5,snakeY=blocksize*5,snakeBody=[];//snake
 var foodX,foodY;//food
 var velocityX=0, velocityY=0; 

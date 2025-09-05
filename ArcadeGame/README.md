@@ -35,5 +35,6 @@ As per the challenge's instructions it was created in less than 150 lines of cod
 ## Files
 - `index.html` – The main HTML file with the canvas and game interface.  
 - `snake.js` – JavaScript file containing all game logic.  
-- `snake.css` – CSS styling for the game board, snake, portals, and Game Over banner.  
+- `snake.css` – CSS styling for the game board, snake, portals, and Game Over banner.
+- `jungle.jpg` - image used for background. Retrieved from: [link](https://pixabay.com/photos/the-jungle-of-chiapas-1865639) 
 ---

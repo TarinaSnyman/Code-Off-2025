@@ -12,9 +12,9 @@ window.onload=function(){ //when page loads
     board.width=cols*blocksize;
     context=board.getContext("2d");//used for drawing on board
     placeFood();
-    setTimeout(placePortals, 15000); // portals appear after 15 seconds
+    setTimeout(placePortals, 5000); // portals appear after 15 seconds
     document.addEventListener("keyup",changeDirection);
-   setInterval(update, 1000/10); //every 10 secondes the page will be refreshed
+    setInterval(update, 1000/10); 
 }
 function placePortals(){
     portalAX = Math.floor(Math.random()*cols)*blocksize;// place the portals
@@ -35,12 +35,8 @@ function update(){
         score++;
         document.getElementById("score").innerText="Score: "+score;
     }
-    for(let i=snakeBody.length-1;i>0;i--){
-       snakeBody[i]=snakeBody[i-1]; 
-    }
-    if(snakeBody.length){
-        snakeBody[0]= [snakeX,snakeY];
-    }
+    for(let i=snakeBody.length-1;i>0;i--){snakeBody[i]=snakeBody[i-1]; }
+    if(snakeBody.length){snakeBody[0]= [snakeX,snakeY];}
     context.fillStyle="Lime";
     snakeX+=velocityX*blocksize;
     snakeY+=velocityY*blocksize;
@@ -51,8 +47,8 @@ function update(){
     context.fillStyle="blue";// draw portals
     context.fillRect(portalAX, portalAY, blocksize, blocksize);
     context.fillRect(portalBX, portalBY, blocksize, blocksize);
-    if(snakeX==portalAX && snakeY==portalAY){ snakeX=portalBX; snakeY=portalBY; }// teleport snake
-    else if(snakeX==portalBX && snakeY==portalBY){ snakeX=portalAX; snakeY=portalAY; }
+    if(snakeX==portalAX && snakeY==portalAY){ snakeX=portalBX; snakeY=portalBY; placePortals(); }// teleport snake
+    else if(snakeX==portalBX && snakeY==portalBY){ snakeX=portalAX; snakeY=portalAY; placePortals(); }
     if(snakeX<0 || snakeX>cols*blocksize||snakeY<0||snakeY>rows*blocksize){ endGame();}//check if game over
     for(let i=0;i<snakeBody.length;i++){
         if (snakeX==snakeBody[i][0]&& snakeY==snakeBody[i][1]){ endGame();}

@@ -13,7 +13,7 @@ window.onload=function(){ //when page loads
     placeFood();
     setTimeout(placePortals, 5000); // portals appear after 15 seconds
     document.addEventListener("keyup",changeDirection);
-    setInterval(update, 1000/10); 
+    setInterval(update, 1250/10); 
 }
 function placePortals(){
     portalAX = Math.floor(Math.random()*cols)*blocksize;// place the portals

@@ -1,0 +1,12 @@
+body{
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    background-color: rgb(184, 240, 228);
+}
+#gameOverBanner{
+  display:none;position:absolute;top:40%;left:50%;
+  transform:translate(-50%,-50%);
+  background:#222;color:white;padding:20px;
+  border-radius:10px;
+}
+#gameOverBanner.show{display:block;}

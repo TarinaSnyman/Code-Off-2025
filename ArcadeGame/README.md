@@ -2,7 +2,7 @@
 
 ## Overview
 This is a classic **Snake game** implemented in HTML, CSS, and JavaScript, with a fun twist: **portals** that teleport the snake between two locations. The game is simple but challenging and adds a creative portal mechanic for added excitement.   
-As per the challenge's instructions it was created in less than 150 lines of code. To be more specific it was written in 126 lines (14 HTML, 91 JS, 21 CSS)
+As per the challenge's instructions it was created in less than 150 lines of code. To be more specific it was written in 123 lines (14 HTML, 88 JS, 21 CSS)
 
 ---
 

@@ -1,4 +1,3 @@
-//declare variables
 var blocksize=25,rows=25,cols=25,board,context;//board
 var snakeX= blocksize*5,snakeY=blocksize*5,snakeBody=[];//snake
 var foodX,foodY;//food
@@ -41,9 +40,7 @@ function update(){
     snakeX+=velocityX*blocksize;
     snakeY+=velocityY*blocksize;
     context.fillRect(snakeX,snakeY, blocksize,blocksize);//draw snakehead
-    for (let i=0;i<snakeBody.length;i++){ 
-        context.fillRect(snakeBody[i][0], snakeBody[i][1],blocksize,blocksize);
-    }
+    for (let i=0;i<snakeBody.length;i++){ context.fillRect(snakeBody[i][0], snakeBody[i][1],blocksize,blocksize);}
     context.fillStyle="blue";// draw portals
     context.fillRect(portalAX, portalAY, blocksize, blocksize);
     context.fillRect(portalBX, portalBY, blocksize, blocksize);

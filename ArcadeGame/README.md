@@ -2,13 +2,13 @@
 
 ## Overview
 This is a classic **Snake game** implemented in HTML, CSS, and JavaScript, with a fun twist: **portals** that teleport the snake between two locations. The game is simple but challenging and adds a creative portal mechanic for added excitement.   
-As per the challenge's instructions it was created in less than 150 lines of code. To be more specific it was written in 123 lines (14 HTML, 97 JS, 12 CSS)
+As per the challenge's instructions it was created in less than 150 lines of code. To be more specific it was written in 126 lines (14 HTML, 91 JS, 21 CSS)
 
 ---
 
 ## Features
 - **Classic Snake Gameplay**: Control the snake with arrow keys and grow longer as you eat food.  
-- **Portals**: Two blue blocks appear after 15 seconds. The snake can enter **either portal** and instantly teleport to the other.  
+- **Portals**: Two blue blocks appear after 5 seconds. The snake can enter **either portal** and instantly teleport to the other. The portals then move to random locations 
 - **Score Tracking**: Current score is displayed and updated in real-time.  
 - **High Score**: Your highest score is stored in the browser and persists between sessions.  
 - **Game Over Banner**: When the snake collides with itself or the edge, a banner appears showing your score and high score. Press **Enter** or click OK to restart.  
@@ -35,5 +35,6 @@ As per the challenge's instructions it was created in less than 150 lines of cod
 ## Files
 - `index.html` – The main HTML file with the canvas and game interface.  
 - `snake.js` – JavaScript file containing all game logic.  
-- `snake.css` – CSS styling for the game board, snake, portals, and Game Over banner.  
+- `snake.css` – CSS styling for the game board, snake, portals, and Game Over banner.
+- `jungle.jpg` - image used for background. Retrieved from: [link](https://pixabay.com/photos/the-jungle-of-chiapas-1865639) 
 ---

@@ -10,7 +10,7 @@ Click the links below to view each project and its details:
 
 2. [Snake](./ArcadeGame/README.md)  
    The clasic arcade game snake we all know and love with a twist.
-   Now you can teleport between portals.
+   Now you can teleport.
 
 
 

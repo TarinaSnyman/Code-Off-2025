@@ -1,40 +1,64 @@
-# Snake with Portals
+# 🐍Vortex Viper🐍
 
 ## Overview
-This is a classic **Snake game** implemented in HTML, CSS, and JavaScript, with a fun twist: **portals** that teleport the snake between two locations. The game is simple but challenging and adds a creative portal mechanic for added excitement.   
-As per the challenge's instructions it was created in less than 150 lines of code. To be more specific it was written in 123 lines (14 HTML, 88 JS, 21 CSS)
+**Vortex Viper** is a classic *Snake game* implemented in **HTML, CSS, and JavaScript** with a fun sci-fi twist:  
+blue **vortices (portals)** appear after a short time, teleporting the snake between two locations.  
+
+The game is simple but challenging, adding a creative warp mechanic for extra excitement.  
+
+As per the challenge’s rules, the entire project was created in under **150 lines of code**:  
+- **123 total lines** (14 HTML, 88 JavaScript, 21 CSS).  
 
 ---
 
 ## Features
-- **Classic Snake Gameplay**: Control the snake with arrow keys and grow longer as you eat food.  
-- **Portals**: Two blue blocks appear after 5 seconds. The snake can enter **either portal** and instantly teleport to the other. The portals then move to random locations 
-- **Score Tracking**: Current score is displayed and updated in real-time.  
-- **High Score**: Your highest score is stored in the browser and persists between sessions.  
-- **Game Over Banner**: When the snake collides with itself or the edge, a banner appears showing your score and high score. Press **Enter** or click OK to restart.  
+- **Classic Snake Gameplay**  
+  Control the snake with the arrow keys and grow longer as you eat food.  
+
+- **Vortices (Portals)**  
+  After 5 seconds, two glowing blue vortices appear. Entering one instantly teleports the snake to the other.  
+  The vortices then relocate to random positions, keeping gameplay dynamic.  
+
+- **Score Tracking**  
+  Your current score updates in real-time.  
+
+- **High Score**  
+  The game stores your highest score locally, persisting between browser sessions.  
+
+- **Game Over Banner**  
+  Collide with yourself or a wall, and a banner appears showing your score and high score.  
+  Press **Enter** or click **OK** to restart.  
+
+- **Fun Twist**  
+  If food disappears, don’t panic—it’s simply in another universe.  
+  Slip through a vortex to track it down!  
 
 ---
 
 ## How to Play
 1. **Clone the repository** to your local machine.  
-2. Open the project folder in **VS Code**.  
-3. Run `snake.html` using the **Live Server** extension.  
-4. Use the **arrow keys** to move the snake:  
+2. Open the `index.html` file in your browser.  
+3. Use the **arrow keys** to move the snake:  
    - Up: ↑  
    - Down: ↓  
    - Left: ←  
    - Right: →  
-5. Eat the red food to grow and increase your score.  
-6. After 15 seconds, **two blue portals** appear:  
-   - Entering one portal will instantly teleport the snake to the other.  
-7. Avoid hitting the walls or your own body.  
-8. When the game ends, press **Enter** or click OK to restart.  
+4. Eat the red food to grow and increase your score.  
+5. After 5 seconds, two blue **vortices (portals)** appear:  
+   - Entering one vortex instantly warps you to the other.  
+6. Avoid hitting the walls or your own body.  
+7. When the game ends, press **Enter** or click **OK** to restart.  
 
+If it is not working by opening the html file open the project in VS Code and run the html with the Live Server extension.
 ---
 
 ## Files
-- `index.html` – The main HTML file with the canvas and game interface.  
+- `index.html` – Main HTML file containing the game canvas and UI.  
 - `snake.js` – JavaScript file containing all game logic.  
-- `snake.css` – CSS styling for the game board, snake, portals, and Game Over banner.
-- `jungle.jpg` - image used for background. Retrieved from: [link](https://pixabay.com/photos/the-jungle-of-chiapas-1865639) 
+- `snake.css` – CSS styling for the snake, food, vortices, and banner.  
+- `jungle.jpg` – Background image.  
+
+Background image source:  
+[The Jungle of Chiapas – Pixabay](https://pixabay.com/photos/the-jungle-of-chiapas-1865639)  
+
 ---

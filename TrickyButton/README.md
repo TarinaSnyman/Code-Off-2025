@@ -20,3 +20,12 @@ This project exists to test your patience, destroy your mouse’s dignity, and m
 - `script.js` — Interactive button logic and click sequence  
 
 ---
+## How to use:
+1. Clone Repository
+2. Open the html file
+  
+If this does not work try
+1. Clone Repository
+2. Open the project in Visual Studio Code
+3. Use the Live Server extension to open the html file
+  

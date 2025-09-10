@@ -5,10 +5,10 @@ Click the links below to view each project and its details:
 
 ## Projects
 
-1. [Don't Click The Button](./Week1-TrickyButton/README.md)  
+1. [Don't Click The Button](./TrickyButton/README.md)  
    A infuriating and futile button chase that changes from cute to angry. It dodges the cursor, creates copies of itself, explodes, and eventually “dies”.
 
-2. [Snake](./ArcadeGame/README.md)  
+2. [Vortex Viper](./ArcadeGame/README.md)  
    The clasic arcade game snake we all know and love with a twist.
    Now you can teleport.
 

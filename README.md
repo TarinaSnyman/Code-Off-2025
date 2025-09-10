@@ -12,7 +12,7 @@ Click the links below to view each project and its details:
    The clasic arcade game snake we all know and love with a twist.
    Now you can teleport.
 
-3. [LanguaChat](./LanguaChat/README.md)
+3. [LanguaChat](./LanguaChat/README.md)   
    Just your everyday language learning chat website.
 
 

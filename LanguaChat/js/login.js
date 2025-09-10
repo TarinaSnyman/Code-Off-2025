@@ -1,5 +1,5 @@
 //hardcoded spies for simulation
-[
+const login=[
   { "username": "John123", "password": "password123" },
   { "username": "Mike21", "password": "qwerty456" },
   { "username": "Jane42", "password": "secret789" },
@@ -14,11 +14,11 @@ document.getElementById("loginForm").addEventListener("submit", e=>{
     const password=document.getElementById("password").value;
 
     //check login credentials
-    const spy=speechSynthesis.find(u=>u.username===username &&u.password===password)
+    const spy=login.find(u=>u.username===username &&u.password===password)
 
     if (spy){
         localStorage.setItem("loggedInUser",spy.username);
-        window.location.href="home.html";
+        window.location.href="index.html";
     }
     else{
         alert("Error: Incorrect username or password. Please try again.")

@@ -1,3 +1,5 @@
+//import encryption and decryption
+import { generateKey, encryptMessage, decryptMessage } from "./cryption";
 
 //preset decoys for user typed messages
 const decoyPresets = {
@@ -24,19 +26,9 @@ function getDecoy(language){
     const decoys=decoyPresets[language];
     return decoys[Math.floor(Math.random()*decoys.length)]; //returns a random decoy of a language
 }
-//encryption
-function encryptMessage(message){
-    return btoa(message);
-}
-
-//decryption
-function decryptMessage(message){
-    return atob(message);
-}
-
 
 //ads the new chat message and handles the display of messages
-function addMessageToChat(decoy,trans,real,sender){
+async function addMessageToChat(decoy,trans,real,sender){
     const chatWindow=document.getElementById("chatWindow");
     //create message element
     const msg=document.createElement("div");
@@ -44,7 +36,9 @@ function addMessageToChat(decoy,trans,real,sender){
     msg.classList.add(sender);
     msg.textContent=decoy;
 
-    var encrypted=encryptMessage(real);
+    const { ciphertext, counter } = await encryptMessage(real);
+    msg.dataset.ciphertext = Array.from(ciphertext).join(","); // store as string
+    msg.dataset.counter = Array.from(counter).join(",");
 
     //single click show the actual translation
     msg.addEventListener("click", ()=>{
@@ -52,9 +46,12 @@ function addMessageToChat(decoy,trans,real,sender){
     })
 
     //double click 
-    msg.addEventListener("dblclick",(e)=>{
+    msg.addEventListener("dblclick",async (e)=>{
         if(e.shiftKey){//shift to show real message
-        msg.textContent=real;
+            const ciphertextArr = new Uint8Array(msg.dataset.ciphertext.split(",").map(Number));
+            const counterArr = new Uint8Array(msg.dataset.counter.split(",").map(Number));
+            const decrypted = await decryptMessage(ciphertextArr, counterArr);
+            msg.textContent = decrypted; //show decrypted message
         }
         else{
             msg.textContent=encrypted;//shows encrypted message
@@ -69,7 +66,9 @@ function addMessageToChat(decoy,trans,real,sender){
 }
 
 //initialise the cat
-function initChat(){
+async function initChat(){
+    await generateKey();
+
     const urlParams=new URLSearchParams(window.location.search);
     const currentPartner=urlParams.get("chat");
     const partnerConfig=chatConfig[currentPartner];
@@ -82,7 +81,7 @@ function initChat(){
     const chatForm = document.getElementById("chatForm");
     const input = document.getElementById("messageInput");
 
-    chatForm.addEventListener("submit", (e)=>{
+    chatForm.addEventListener("submit",async (e)=>{
         e.preventDefault();
         const userText=input.value.trim();
 

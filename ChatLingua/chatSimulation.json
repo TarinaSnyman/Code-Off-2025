@@ -1,0 +1,62 @@
+{
+  "Hyunjin": {
+    "language": "korean",
+    "messages": [
+      { "decoy": "안녕하세요", "translation": "Hello", "real": "Meet me at midnight" },
+      { "decoy": "좋은 아침", "translation": "Good morning", "real": "The package is ready" },
+      { "decoy": "잘 지내?", "translation": "How are you?", "real": "Change the meeting point" },
+      { "decoy": "감사합니다", "translation": "Thank you", "real": "The coast is clear" },
+      { "decoy": "잘 자요", "translation": "Good night", "real": "Leave no traces" }
+    ]
+  },
+  "Takeshi": {
+    "language": "japanese",
+    "messages": [
+      { "decoy": "こんにちは", "translation": "Hello", "real": "Meet me at midnight" },
+      { "decoy": "おはよう", "translation": "Good morning", "real": "The package is ready" },
+      { "decoy": "お元気ですか？", "translation": "How are you?", "real": "Change the meeting point" },
+      { "decoy": "ありがとう", "translation": "Thank you", "real": "The coast is clear" },
+      { "decoy": "おやすみ", "translation": "Good night", "real": "Leave no traces" }
+    ]
+  },
+  "Luca": {
+    "language": "italian",
+    "messages": [
+      { "decoy": "Ciao", "translation": "Hello", "real": "Meet me at midnight" },
+      { "decoy": "Buongiorno", "translation": "Good morning", "real": "The package is ready" },
+      { "decoy": "Come stai?", "translation": "How are you?", "real": "Change the meeting point" },
+      { "decoy": "Grazie", "translation": "Thank you", "real": "The coast is clear" },
+      { "decoy": "Buona notte", "translation": "Good night", "real": "Leave no traces" }
+    ]
+  },
+  "Baatar": {
+    "language": "mongolian",
+    "messages": [
+      { "decoy": "Сайн уу", "translation": "Hello", "real": "Meet me at midnight" },
+      { "decoy": "Өглөөний мэнд", "translation": "Good morning", "real": "The package is ready" },
+      { "decoy": "Танд сайн уу?", "translation": "How are you?", "real": "Change the meeting point" },
+      { "decoy": "Баярлалаа", "translation": "Thank you", "real": "The coast is clear" },
+      { "decoy": "Сайн амраарай", "translation": "Good night", "real": "Leave no traces" }
+    ]
+  },
+  "Elsa": {
+    "language": "swedish",
+    "messages": [
+      { "decoy": "Hej", "translation": "Hello", "real": "Meet me at midnight" },
+      { "decoy": "God morgon", "translation": "Good morning", "real": "The package is ready" },
+      { "decoy": "Hur mår du?", "translation": "How are you?", "real": "Change the meeting point" },
+      { "decoy": "Tack", "translation": "Thank you", "real": "The coast is clear" },
+      { "decoy": "God natt", "translation": "Good night", "real": "Leave no traces" }
+    ]
+  },
+  "Nok": {
+    "language": "thai",
+    "messages": [
+      { "decoy": "สวัสดี", "translation": "Hello", "real": "Meet me at midnight" },
+      { "decoy": "สวัสดีตอนเช้า", "translation": "Good morning", "real": "The package is ready" },
+      { "decoy": "คุณเป็นอย่างไรบ้าง?", "translation": "How are you?", "real": "Change the meeting point" },
+      { "decoy": "ขอบคุณ", "translation": "Thank you", "real": "The coast is clear" },
+      { "decoy": "ราตรีสวัสดิ์", "translation": "Good night", "real": "Leave no traces" }
+    ]
+  }
+}

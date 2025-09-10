@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LanguaChat - Register</title>
+    <link rel="stylesheet" href="../style/stylesheet.css">
+</head>
+<body>
+    <header>
+        🌍 Register to <span>LanguaChat</span> 💬
+    </header>
+    <div class="container">
+        <h1>LinguaLink</h1>
+        <form id="registerForm">
+            <label for="name">First Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="surname">Surname:</label>
+            <input type="text" id="surname" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+
+            <label for="nativeLang">First Language:</label>
+            <input type="text" id="nativeLang" required>
+
+            <label for="learnLang">Language You Want to Learn:</label>
+            <input type="text" id="learnLang" required>
+
+            <button type="submit">Register</button>
+        </form>
+        <p>Already have an account? <a href="login.html">Login</a></p>
+    </div>
+    <script>
+        function failRegister(){
+            alert("An unecpected error occured. Could not register. \nPlease try again later.")
+        }
+
+    </script>
+</body>
+</html>

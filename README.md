@@ -13,7 +13,7 @@ Click the links below to view each project and its details:
    Now you can teleport.
 
 3. [LanguaChat](./LanguaChat/README.md)   
-   Just your everyday language learning chat website.
+   Just your everyday language learning chat website. (It may have some bugs 🕵️)
 
 
 ---

@@ -7,7 +7,10 @@
 </head>
 <body>
     <header>
-        🌍 <span>LanguaChat</span> 💬
+        <button id="backBtn">
+            <a href="index.html"><img src="../Images/arrow_left.svg" alt=""></a>
+        </button>
+                    🌍 <span>LanguaChat</span> 💬
     </header>
     <div class="container">
         <h1>Chat Room</h1>
@@ -15,7 +18,7 @@
             <!-- Messages will appear here -->
         </div>
         <form id="chatForm" class="chat-form">
-            <input type="text" id="messageInput" placeholder="Type a message" required>
+            <input type="text" id="messageInput" autocomplete="off" placeholder="Type a message" required>
             <button type="submit">Send</button>
         </form>
     </div>

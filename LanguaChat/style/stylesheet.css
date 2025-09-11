@@ -1,22 +1,31 @@
-/* Import fun Google Font */
+/* import google font */
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap');
 
-/* Reset */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
 body {
     font-family: 'Baloo 2', cursive, sans-serif;
-    background-color: #fff8f0;
+    background-color: #f8cd91;
+    background-image: url("../Images/background.png");
+    background-size: cover;
+     background-position: center;
+    background-repeat: no-repeat;
     color: #333;
     line-height: 1.6;
+    min-height: 100%;
 }
 
-/* ===== HEADER ===== */
+/* header*/
 header {
+    position: relative; /* allows absolute positioning of backBtn inside header */
     background: linear-gradient(90deg, #ffb347, #ff7e5f);
     color: white;
     padding: 20px;
@@ -26,14 +35,41 @@ header {
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 header span {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    display: inline-block;
 }
 
-/* ===== CONTAINER ===== */
+#backBtn {
+    position: absolute;
+    left: 20px; /* distance from left edge */
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 2rem; 
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    padding: 0;
+}
+
+#backBtn img {
+    width: 100%;
+    height: auto;
+}
+
+
+/* container*/
 .container {
     max-width: 500px;
     margin: 0 auto;
@@ -50,7 +86,7 @@ h1 {
     color: #ff7e5f;
 }
 
-/* ===== FORMS ===== */
+/* forms */
 form {
     display: flex;
     flex-direction: column;
@@ -75,7 +111,7 @@ input:focus {
     box-shadow: 0 0 5px rgba(255, 126, 95, 0.5);
 }
 
-/* Buttons */
+/* form btns */
 button {
     padding: 12px;
     background: linear-gradient(90deg, #ff7e5f, #ffb347);
@@ -93,7 +129,7 @@ button:hover {
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-/* Links */
+/* links */
 a {
     color: #ff7e5f;
     text-decoration: none;
@@ -104,7 +140,7 @@ a:hover {
     text-decoration: underline;
 }
 
-/* ===== CHAT LIST ===== */
+/* chat list links*/
 #chatList {
     list-style: none;
     padding: 0;
@@ -131,29 +167,29 @@ a:hover {
     transform: translateX(3px);
 }
 
-/* ===== CHAT WINDOW ===== */
+/* chat windo */
 .chat-window {
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 15px;
-    padding: 15px;
-    height: 350px;
+    padding: 10px;
+    height: 300px;
     overflow-y: auto;
     margin-bottom: 15px;
 }
 
-/* Messages */
+/* chat messages */
 .message {
     max-width: 70%;
     padding: 10px 15px;
-    margin: 8px 0;
+    margin: 5px 0;
     border-radius: 15px;
     line-height: 1.4;
     word-wrap: break-word;
     font-size: 1rem;
 }
 
-/* My messages */
+/* user messages */
 .message.you {
     background: #ffb347;
     color: white;
@@ -161,7 +197,7 @@ a:hover {
     text-align: right;
 }
 
-/* Other person’s messages */
+/* other simulated messages */
 .message.them {
     background: #f1f1f1;
     color: #333;
@@ -169,7 +205,7 @@ a:hover {
     text-align: left;
 }
 
-/* ===== CHAT FORM ===== */
+/* chat form */
 .chat-form {
     display: flex;
     gap: 10px;
@@ -179,7 +215,7 @@ a:hover {
     flex: 1;
 }
 
-/* ===== LOGOUT BUTTON ===== */
+/* logout */
 #logoutBtn {
     width: 100%;
     margin-top: 10px;

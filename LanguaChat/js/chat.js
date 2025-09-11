@@ -1,5 +1,42 @@
 //import encryption and decryption
-import { generateKey, encryptMessage, decryptMessage } from "./cryption";
+//import { generateKey, encryptMessage, decryptMessage } from "./cryption";
+
+let key;
+//generate the key
+async function generateKey(){
+    key = await crypto.subtle.generateKey(
+        { name: "AES-CTR", length: 256 },true,["encrypt", "decrypt"]
+    );
+    return key;
+}
+
+//encryption AES
+  async function encryptMessage(message) {
+    const counter=crypto.getRandomValues(new Uint8Array(16));
+    const encoded =new TextEncoder().encode(message);
+
+    const ciphertext=await crypto.subtle.encrypt(
+        {name:"AES-CTR",counter,length:64},key,encoded 
+    );
+
+    // convert  to Base64 
+    const base64Cipher = btoa(String.fromCharCode(...new Uint8Array(ciphertext)));
+    const base64Counter = btoa(String.fromCharCode(...counter));
+
+    return { ciphertext: base64Cipher, counter: base64Counter };
+}
+//decrypts messages AES
+async function decryptMessage(base64Cipher, base64Counter){
+    // convert Base64 back to Uint8Array
+    const ciphertextArr = Uint8Array.from(atob(base64Cipher), c => c.charCodeAt(0));
+    const counterArr = Uint8Array.from(atob(base64Counter), c => c.charCodeAt(0));
+
+    const decrypted =await crypto.subtle.decrypt(
+        {name:"AES-CTR", counter: counterArr, length:64},key,ciphertextArr
+    );
+    return new TextDecoder().decode(decrypted);
+}
+
 
 //preset decoys for user typed messages
 const decoyPresets = {
@@ -29,6 +66,12 @@ function getDecoy(language){
 
 //ads the new chat message and handles the display of messages
 async function addMessageToChat(decoy,trans,real,sender){
+    function resetMessage(){
+   //automatically swiths to the decoy after 5 seconds
+    setTimeout(()=>{
+        msg.textContent=decoy;
+    },5000); 
+}
     const chatWindow=document.getElementById("chatWindow");
     //create message element
     const msg=document.createElement("div");
@@ -37,32 +80,32 @@ async function addMessageToChat(decoy,trans,real,sender){
     msg.textContent=decoy;
 
     const { ciphertext, counter } = await encryptMessage(real);
-    msg.dataset.ciphertext = Array.from(ciphertext).join(","); // store as string
-    msg.dataset.counter = Array.from(counter).join(",");
+    msg.dataset.ciphertext = ciphertext;
+    msg.dataset.counter = counter; 
 
     //single click show the actual translation
-    msg.addEventListener("click", ()=>{
-        msg.textContent=trans;
+    msg.addEventListener("click", (e)=>{
+        if(e.ctrlKey){//ctrl to show real message
+            msg.textContent=msg.dataset.ciphertext;//shows encrypted message
+            resetMessage();
+        }
+        else{
+         msg.textContent=trans;
+            resetMessage();
+        }
     })
 
     //double click 
     msg.addEventListener("dblclick",async (e)=>{
-        if(e.shiftKey){//shift to show real message
-            const ciphertextArr = new Uint8Array(msg.dataset.ciphertext.split(",").map(Number));
-            const counterArr = new Uint8Array(msg.dataset.counter.split(",").map(Number));
-            const decrypted = await decryptMessage(ciphertextArr, counterArr);
-            msg.textContent = decrypted; //show decrypted message
-        }
-        else{
-            msg.textContent=encrypted;//shows encrypted message
+        if(e.ctrlKey){//ctrl to show real message
+            const decrypted = await decryptMessage(msg.dataset.ciphertext, msg.dataset.counter);
+            msg.textContent = decrypted;// show decrupted message
+            resetMessage();
         }
     })
     chatWindow.appendChild(msg);
-
     //automatically swiths to the decoy after 5 seconds
-    setTimeout(()=>{
-        msg.textContent=decoy;
-    },5000);
+    resetMessage();
 }
 
 //initialise the cat
@@ -71,6 +114,7 @@ async function initChat(){
 
     const urlParams=new URLSearchParams(window.location.search);
     const currentPartner=urlParams.get("chat");
+    console.log(currentPartner);
     const partnerConfig=chatConfig[currentPartner];
     const language=partnerConfig.language;
 
@@ -86,7 +130,7 @@ async function initChat(){
         const userText=input.value.trim();
 
         const decoy=getDecoy(language)
-        const trans= decoy+ " (translation)"
+        const trans= decoy+ " Error in your message. Could not translate"
         const real= userText;
 
         addMessageToChat(decoy,trans,real,"you");
